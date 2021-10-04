@@ -1,0 +1,1 @@
+-IC:/OpenGL/OpenGLPrj/include -IC:/OpenGL/OpenGLPrj/vendor/glad/include -IC:/OpenGL/OpenGLPrj/vendor/glfw/include -IC:/OpenGL/OpenGLPrj/vendor/glm -IC:/OpenGL/OpenGLPrj/vendor/stb

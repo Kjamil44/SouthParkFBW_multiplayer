@@ -1,0 +1,81 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_89835/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_89835.dir\build.make CMakeFiles/cmTC_89835.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89835.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\mingw32-gcc.exe    -o CMakeFiles\cmTC_89835.dir\CheckIncludeFile.c.obj -c C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
+ #include <pthread.h>
+                     ^
+compilation terminated.
+CMakeFiles\cmTC_89835.dir\build.make:83: recipe for target 'CMakeFiles/cmTC_89835.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_89835.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Makefile:139: recipe for target 'cmTC_89835/fast' failed
+mingw32-make.exe: *** [cmTC_89835/fast] Error 2
+
+
+
+Determining if the include file dinput.h exists failed with the following output:
+Change Dir: C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_51ae7/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_51ae7.dir\build.make CMakeFiles/cmTC_51ae7.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51ae7.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\mingw32-gcc.exe    -o CMakeFiles\cmTC_51ae7.dir\CheckIncludeFile.c.obj -c C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: dinput.h: No such file or directory
+ #include <dinput.h>
+                    ^
+compilation terminated.
+CMakeFiles\cmTC_51ae7.dir\build.make:83: recipe for target 'CMakeFiles/cmTC_51ae7.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_51ae7.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Makefile:139: recipe for target 'cmTC_51ae7/fast' failed
+mingw32-make.exe: *** [cmTC_51ae7/fast] Error 2
+
+
+
+Determining if the include file xinput.h exists failed with the following output:
+Change Dir: C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_f225c/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_f225c.dir\build.make CMakeFiles/cmTC_f225c.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f225c.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\mingw32-gcc.exe    -o CMakeFiles\cmTC_f225c.dir\CheckIncludeFile.c.obj -c C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: xinput.h: No such file or directory
+ #include <xinput.h>
+                    ^
+compilation terminated.
+CMakeFiles\cmTC_f225c.dir\build.make:83: recipe for target 'CMakeFiles/cmTC_f225c.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f225c.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Makefile:139: recipe for target 'cmTC_f225c/fast' failed
+mingw32-make.exe: *** [cmTC_f225c/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test _GLFW_HAS_64ASLR failed with the following output:
+Change Dir: C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_c7b11/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_c7b11.dir\build.make CMakeFiles/cmTC_c7b11.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c7b11.dir/src.c.obj
+C:\MinGW\bin\mingw32-gcc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -o CMakeFiles\cmTC_c7b11.dir\src.c.obj -c C:\OpenGL\OpenGLPrj\build\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_c7b11.exe
+C:\cmake-3.19.6-win64-x64\cmake-3.19.6-win64-x64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_c7b11.dir\link.txt --verbose=1
+C:\cmake-3.19.6-win64-x64\cmake-3.19.6-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\cmTC_c7b11.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_c7b11.dir/objects.a @CMakeFiles\cmTC_c7b11.dir\objects1.rsp
+C:\MinGW\bin\mingw32-gcc.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles\cmTC_c7b11.dir/objects.a -Wl,--no-whole-archive -o cmTC_c7b11.exe -Wl,--out-implib,libcmTC_c7b11.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_c7b11.dir\linklibs.rsp
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: unrecognized option '--high-entropy-va'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: use the --help option for usage information
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_c7b11.dir\build.make:106: recipe for target 'cmTC_c7b11.exe' failed
+mingw32-make.exe[1]: *** [cmTC_c7b11.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/OpenGL/OpenGLPrj/build/CMakeFiles/CMakeTmp'
+Makefile:139: recipe for target 'cmTC_c7b11/fast' failed
+mingw32-make.exe: *** [cmTC_c7b11/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }

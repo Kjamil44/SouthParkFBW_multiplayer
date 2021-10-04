@@ -1,0 +1,1 @@
+-IC:/OpenGL/OpenGLPrj/vendor/glfw/include -IC:/OpenGL/OpenGLPrj/vendor/glfw/src -IC:/OpenGL/OpenGLPrj/build/vendor/glfw/src -IC:/OpenGL/OpenGLPrj/vendor/glfw/deps/mingw
