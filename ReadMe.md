@@ -4,7 +4,7 @@
 
 ###  Играта:
 
-![Game](game.png)
+![Game](igra.png)
 
 
 
