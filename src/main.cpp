@@ -18,7 +18,7 @@ enum Shooting_State
 };
 int clawShot = CNOSHOOT, lightShot = LNOSHOOT;
 
-const std::string program_name = ("Camera");
+const std::string program_name = ("SouthPark-FBW Multiplayer");
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -50,7 +50,10 @@ float br = x1, br2 = x2;
 bool CHIT = false, LHIT = false;
 
 //health counter> COON | CHAOS
-float count1 = 12.0f, count2 = 12.0f;
+float count1 = 26.0f, count2 = 26.0f;
+
+//WASTED
+bool deadcoon = false, deadchaos = false;
 
 int main()
 {
@@ -173,39 +176,87 @@ int main()
                        -15.5f, -11.5f, -11.5f, 0.0f, 0.0f,
                        -15.5f, -11.5f, -11.5f, 0.0f, 1.0f};
   float healthbarCOON[] = {
-      -0.6f, 2.4f, 0.0f, 0.0f, 1.0f,
-      -0.6f, -2.4f, 0.0f, 1.0f, 1.0f,
-      0.0f, -2.4f, 0.0f, 1.0f, 0.0f,
+      0.6f, 1.0f, 0.0f, 0.0f, 1.0f,
+      0.6f, -1.0f, 0.0f, 1.0f, 1.0f,
+      2.6f, -1.0f, 0.0f, 1.0f, 0.0f,
 
-      -0.6f, 2.4f, 0.0f, 1.0f, 0.0f,
-      0.0f, 2.4f, 0.0f, 0.0f, 0.0f,
-      0.0f, -2.4f, 0.0f, 0.0f, 1.0f,
+      0.6f, 1.0f, 0.0f, 1.0f, 0.0f,
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      2.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      //vtor
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      2.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
 
-      0.0f, -2.4f, 0.0f, 0.0f, 1.0f,
-      0.0f, 2.4f, 0.0f, 1.0f, 1.0f,
-      0.6f, 2.4f, 0.0f, 1.0f, 0.0f,
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //tret
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
 
-      0.0f, -2.4f, 0.0f, 1.0f, 0.0f,
-      0.6f, 2.4f, 0.0f, 0.0f, 0.0f,
-      0.6f, -2.4f, 0.0f, 0.0f, 1.0f
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //4
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //5
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      10.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      10.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      10.6f, 1.0f, 0.0f, 0.0f, 0.0
 
   };
   float healthbarCHAOS[] = {
-      -0.6f, 2.4f, 0.0f, 0.0f, 1.0f,
-      -0.6f, -2.4f, 0.0f, 1.0f, 1.0f,
-      0.0f, -2.4f, 0.0f, 1.0f, 0.0f,
+      0.6f, 1.0f, 0.0f, 0.0f, 1.0f,
+      0.6f, -1.0f, 0.0f, 1.0f, 1.0f,
+      2.6f, -1.0f, 0.0f, 1.0f, 0.0f,
 
-      -0.6f, 2.4f, 0.0f, 1.0f, 0.0f,
-      0.0f, 2.4f, 0.0f, 0.0f, 0.0f,
-      0.0f, -2.4f, 0.0f, 0.0f, 1.0f,
+      0.6f, 1.0f, 0.0f, 1.0f, 0.0f,
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      2.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      //vtor
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      2.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
 
-      0.0f, -2.4f, 0.0f, 0.0f, 1.0f,
-      0.0f, 2.4f, 0.0f, 1.0f, 1.0f,
-      0.6f, 2.4f, 0.0f, 1.0f, 0.0f,
+      2.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //tret
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      4.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
 
-      0.0f, -2.4f, 0.0f, 1.0f, 0.0f,
-      0.6f, 2.4f, 0.0f, 0.0f, 0.0f,
-      0.6f, -2.4f, 0.0f, 0.0f, 1.0f};
+      4.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //4
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      6.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+
+      6.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0,
+      //5
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      8.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      10.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+
+      8.6f, 1.0f, 0.0f, 0.0f, 0.0f,
+      10.6f, -1.0f, 0.0f, 0.0f, 1.0f,
+      10.6f, 1.0f, 0.0f, 0.0f, 0.0};
   unsigned int VBO1, VBO2, VBO3, VBO4, VBO5, VBO6, VBO7, VAO1, VAO2, VAO3, VAO4, VAO5, VAO6, VAO7;
   glGenVertexArrays(1, &VAO1);
   glGenVertexArrays(1, &VAO2);
@@ -529,12 +580,11 @@ int main()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-      ourShader.use();// activate shader
-      // bind textures on corresponding texture units
-      glActiveTexture(GL_TEXTURE0);
-      glBindTexture(GL_TEXTURE_2D, texture1);
-       
-   
+    ourShader.use(); // activate shader
+    // bind textures on corresponding texture units
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+
     // pass projection matrix to shader (note that in this case it could change
     // every frame)
     glm::mat4 projection = glm::perspective(
@@ -575,8 +625,13 @@ int main()
     glm::mat4 model2 = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
 
     model2 = glm::rotate(model2, glm::radians(90.0f), glm::vec3(40.0f, -0.3f, 0.5f));
-    if(count1<3) model2 = glm::translate(model2, glm::vec3(5.0f, -10.0f, 16.5f));
-    else model2 = glm::translate(model2, glm::vec3(x1, y1, z1));
+    if (count1 < 6)
+    {
+      deadcoon = true;
+      model2 = glm::translate(model2, glm::vec3(5.0f, -10.0f, 16.5f));
+    }
+    else
+      model2 = glm::translate(model2, glm::vec3(x1, y1, z1));
     spriteShader1.setMat4("model", model2);
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -602,8 +657,13 @@ int main()
     glm::mat4 model3 = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
                                         //float angle2 = 90.0f;
     model3 = glm::rotate(model3, glm::radians(90.0f), glm::vec3(40.0f, -0.3f, 0.5f));
-    if(count2<3) model3 = glm::translate(model3, glm::vec3(5.0f, -10.0f, 16.5f));
-    else model3 = glm::translate(model3, glm::vec3(x2, y2, z2));
+    if (count2 < 6)
+    {
+      deadchaos = true;
+      model3 = glm::translate(model3, glm::vec3(5.0f, -10.0f, 16.5f));
+    }
+    else
+      model3 = glm::translate(model3, glm::vec3(x2, y2, z2));
     spriteShader2.setMat4("model", model3);
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -714,12 +774,12 @@ int main()
 
     glm::mat4 model6 = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
     //float angle2 = 90.0f;
-    model6 = glm::rotate(model6, glm::radians(180.0f), glm::vec3(55.0f, 55.3f, -0.5f));
-    model6 = glm::translate(model6, glm::vec3(0.0f, -3.0f, -17.0f));
+    model6 = glm::rotate(model6, glm::radians(180.0f), glm::vec3(0.0f, 10.0f, 0.0f));
+    model6 = glm::translate(model6, glm::vec3(-0.55f, 0.0f, -12.05f));
     healthbar1.setMat4("model", model6);
     if (CHIT)
     {
-      count1 -= 3;
+      count1 -= 6;
     }
     glDrawArrays(GL_TRIANGLES, 0, count1);
 
@@ -739,13 +799,13 @@ int main()
 
     glm::mat4 model7 = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
     //float angle2 = 90.0f;
-    model7 = glm::rotate(model7, glm::radians(180.0f), glm::vec3(55.0f, 55.3f, -0.5f));
-    model7 = glm::translate(model7, glm::vec3(0.0f, 2.5f, -17.0f));
+    // model7 = glm::rotate(model7, glm::radians(180.0f), glm::vec3(55.0f, 55.3f, -0.5f));
+    model7 = glm::translate(model7, glm::vec3(-0.6f, 0.0f, 12.0f));
     healthbar2.setMat4("model", model7);
 
     if (LHIT)
     {
-      count2 -= 3;
+      count2 -= 6;
     }
     glDrawArrays(GL_TRIANGLES, 0, count2);
 
@@ -755,7 +815,7 @@ int main()
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
-  
+
   // optional: de-allocate all resources once they've outlived their purpose:
   // ------------------------------------------------------------------------
   glDeleteVertexArrays(1, &VAO1);
@@ -862,18 +922,32 @@ void processInput(GLFWwindow *window)
   /////////////CLAWS SHOOT////////////////////////
   if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
   {
-    cy = y1;
-    cz = z1;
-    br = x1;
-    clawShot = CSHOOT;
+    if (deadcoon)
+    {
+      clawShot = CNOSHOOT;
+    }
+    else
+    {
+      cy = y1;
+      cz = z1;
+      br = x1;
+      clawShot = CSHOOT;
+    }
   }
   /////////////LIGHTNING STRIKE////////////////////
   if (glfwGetKey(window, GLFW_KEY_BACKSPACE) == GLFW_PRESS)
   {
-    ly = y2;
-    lz = z2;
-    br2 = x2;
-    lightShot = LSHOOT;
+    if (deadchaos)
+    {
+      lightShot = LNOSHOOT;
+    }
+    else
+    {
+      ly = y2;
+      lz = z2;
+      br2 = x2;
+      lightShot = LSHOOT;
+    }
   }
   ///////////////////CAMERA MOVEMENT//////////////////////
   if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS)
@@ -895,4 +969,3 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
   // and height will be significantly larger than specified on retina displays.
   glViewport(0, 0, width, height);
 }
-
